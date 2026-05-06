@@ -1,0 +1,1404 @@
+
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kay Dong | Overseas Growth & KOL Marketing</title>
+    <meta name="description" content="Kay Dong - 10+ years in overseas content ecosystems, KOL BD, and growth operations across Europe, Africa, and LATAM.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #08090b;
+            --bg-secondary: #0f1115;
+            --bg-card: #14161c;
+            --bg-card-hover: #1a1d24;
+            --border: #1e2128;
+            --border-light: #2a2d35;
+            --text-primary: #e8eaef;
+            --text-secondary: #9ca0ab;
+            --text-tertiary: #6b6f7a;
+            --accent: #c8a45c;
+            --accent-soft: rgba(200, 164, 92, 0.15);
+            --accent-glow: rgba(200, 164, 92, 0.35);
+            --tag-bg: #1a1d26;
+            --tag-text: #b0b5c0;
+            --dot-color: #c8a45c;
+            --timeline-line: #1e2128;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-full: 50%;
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --max-width: 1060px;
+            --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            transition: background-color var(--transition-smooth);
+        }
+
+        /* ── Background ambient glow ── */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -40%;
+            left: -20%;
+            width: 70vw;
+            height: 70vw;
+            max-width: 900px;
+            max-height: 900px;
+            background: radial-gradient(circle at center, rgba(200, 164, 92, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: ambientFloat 18s ease-in-out infinite;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -30%;
+            right: -15%;
+            width: 55vw;
+            height: 55vw;
+            max-width: 700px;
+            max-height: 700px;
+            background: radial-gradient(circle at center, rgba(200, 164, 92, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: ambientFloat 22s ease-in-out infinite reverse;
+        }
+        @keyframes ambientFloat {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(2%, -3%) scale(1.06);
+            }
+            66% {
+                transform: translate(-1%, 2%) scale(0.95);
+            }
+        }
+
+        /* ── Container ── */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ── Language Switch Button ── */
+        .lang-switch-wrap {
+            position: fixed;
+            top: 28px;
+            right: 28px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .lang-switch-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: var(--radius-full);
+            border: 1.5px solid var(--border-light);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-smooth);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .lang-switch-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-full);
+            background: var(--accent-soft);
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+        }
+        .lang-switch-btn:hover {
+            border-color: var(--accent);
+            box-shadow: 0 6px 28px var(--accent-glow), 0 0 0 8px var(--accent-soft);
+            transform: translateY(-2px);
+        }
+        .lang-switch-btn:hover::after {
+            opacity: 1;
+        }
+        .lang-switch-btn:active {
+            transform: scale(0.94);
+            transition: transform 0.1s ease;
+        }
+        .lang-switch-label {
+            position: relative;
+            z-index: 1;
+            pointer-events: none;
+            transition: transform var(--transition-bounce);
+        }
+        .lang-switch-btn:hover .lang-switch-label {
+            transform: rotate(-4deg) scale(1.06);
+        }
+        .lang-indicator-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: var(--radius-full);
+            background: var(--accent);
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            box-shadow: 0 0 10px var(--accent-glow);
+            animation: dotPulse 2.5s ease-in-out infinite;
+        }
+        @keyframes dotPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 6px var(--accent-glow);
+            }
+            50% {
+                box-shadow: 0 0 18px var(--accent-glow), 0 0 30px rgba(200, 164, 92, 0.5);
+            }
+        }
+
+        /* ── Language visibility ── */
+        [data-lang-en],
+        [data-lang-zh] {
+            transition: opacity var(--transition-smooth);
+        }
+        html[data-lang="en"] [data-lang-zh] {
+            display: none;
+        }
+        html[data-lang="zh"] [data-lang-en] {
+            display: none;
+        }
+
+        /* ── Section ── */
+        .section {
+            padding: 70px 0;
+            position: relative;
+        }
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: var(--border);
+            opacity: 0.6;
+            margin: 0 auto;
+            max-width: var(--max-width);
+        }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            width: 100%;
+        }
+        /* 照片容器 */
+        .hero-image-wrapper {
+            flex: 0 0 auto;
+            width: clamp(280px, 35vw, 400px);
+            height: auto;
+            position: relative;
+            animation: fadeInUp 0.7s ease forwards;
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 3/4; /* 可根据实际照片调整比例 */
+            border: 2px solid var(--border-light);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(200, 164, 92, 0.2);
+            transition: all var(--transition-smooth);
+            filter: brightness(0.95) contrast(1.05);
+            background: var(--bg-card);
+        }
+        .hero-image-wrapper:hover img {
+            border-color: var(--accent);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 25px var(--accent-glow);
+            filter: brightness(1.05) contrast(1.1);
+            transform: translateY(-4px);
+        }
+        /* 右侧文字区域 */
+        .hero-text-content {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-soft);
+            border: 1px solid rgba(200, 164, 92, 0.25);
+            padding: 7px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--accent);
+            letter-spacing: 0.04em;
+            width: fit-content;
+            animation: fadeInUp 0.7s ease forwards;
+        }
+        .hero-badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: var(--radius-full);
+            background: var(--accent);
+            animation: dotPulse 2.5s ease-in-out infinite;
+        }
+        .hero-name {
+            font-size: clamp(2.8rem, 6vw, 4.2rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            color: var(--text-primary);
+            animation: fadeInUp 0.7s ease 0.05s forwards;
+            opacity: 0;
+        }
+        .hero-name .accent {
+            color: var(--accent);
+        }
+        .hero-tagline {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            line-height: 1.7;
+            max-width: 600px;
+            animation: fadeInUp 0.7s ease 0.1s forwards;
+            opacity: 0;
+        }
+        .hero-meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            animation: fadeInUp 0.7s ease 0.15s forwards;
+            opacity: 0;
+        }
+        .hero-meta-tag {
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            border: 1px solid transparent;
+            transition: all var(--transition-fast);
+            cursor: default;
+        }
+        .hero-meta-tag:hover {
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 响应式：小屏幕堆叠 */
+        @media (max-width: 768px) {
+            .hero-inner {
+                flex-direction: column;
+                gap: 30px;
+                align-items: flex-start;
+            }
+            .hero-image-wrapper {
+                width: 200px;
+                margin: 0 auto;
+            }
+            .hero-image-wrapper img {
+                aspect-ratio: 3/4;
+            }
+            .hero-text-content {
+                align-items: flex-start;
+            }
+            .hero-name {
+                font-size: 2.2rem;
+            }
+            .hero-tagline {
+                font-size: 0.95rem;
+            }
+            .hero {
+                padding-top: 80px;
+                padding-bottom: 20px;
+                min-height: auto;
+            }
+        }
+
+        /* ── Section Header ── */
+        .section-header {
+            margin-bottom: 44px;
+        }
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            line-height: 1.25;
+        }
+
+        /* ── Narrative card ── */
+        .narrative-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 36px 40px;
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        .narrative-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(200, 164, 92, 0.4), transparent);
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+        }
+        .narrative-card:hover::before {
+            opacity: 1;
+        }
+        .narrative-card:hover {
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
+        }
+        .narrative-card p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin-bottom: 10px;
+        }
+        .narrative-card p:last-child {
+            margin-bottom: 0;
+        }
+        .narrative-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .narrative-highlight-item {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            padding: 16px 18px;
+            border: 1px solid transparent;
+            transition: all var(--transition-fast);
+            cursor: default;
+        }
+        .narrative-highlight-item:hover {
+            border-color: var(--border-light);
+            background: var(--bg-card);
+        }
+        .narrative-highlight-item .nh-icon {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .narrative-highlight-item .nh-text {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* ── Products ── */
+        .products-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .product-chip {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 11px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            color: var(--text-primary);
+            transition: all var(--transition-smooth);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-chip::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 30px;
+            background: var(--accent-soft);
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+        }
+        .product-chip:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 18px var(--accent-glow);
+            transform: translateY(-3px);
+        }
+        .product-chip:hover::after {
+            opacity: 1;
+        }
+        .product-chip span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Timeline ── */
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 6px;
+            bottom: 6px;
+            width: 1.5px;
+            background: var(--timeline-line);
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 32px;
+            transition: all var(--transition-smooth);
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -24px;
+            top: 6px;
+            width: 11px;
+            height: 11px;
+            border-radius: var(--radius-full);
+            background: var(--dot-color);
+            box-shadow: 0 0 12px var(--accent-glow);
+            z-index: 2;
+            transition: all var(--transition-smooth);
+        }
+        .timeline-item:hover .timeline-dot {
+            box-shadow: 0 0 22px var(--accent-glow), 0 0 40px rgba(200, 164, 92, 0.5);
+            transform: scale(1.4);
+            background: #e0c87a;
+        }
+        .timeline-period {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        .timeline-role {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            margin-bottom: 4px;
+        }
+        .timeline-company {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .timeline-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .timeline-desc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .timeline-desc ul li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 5px;
+        }
+        .timeline-desc ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--text-tertiary);
+            font-size: 0.7rem;
+            top: 2px;
+        }
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .timeline-tag {
+            font-size: 0.7rem;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            border: 1px solid transparent;
+            transition: all var(--transition-fast);
+            cursor: default;
+        }
+        .timeline-tag:hover {
+            border-color: var(--border-light);
+            color: var(--text-primary);
+        }
+
+        /* ── Skills Grid ── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 24px 28px;
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-card:hover {
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+        .skill-card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .skill-card-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+        .skill-card-subtitle {
+            font-size: 0.78rem;
+            color: var(--text-tertiary);
+            margin-bottom: 10px;
+        }
+        .skill-tags-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .skill-tag {
+            font-size: 0.7rem;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 3px 9px;
+            border-radius: 12px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            border: 1px solid transparent;
+            transition: all var(--transition-fast);
+            cursor: default;
+        }
+        .skill-tag:hover {
+            border-color: var(--border-light);
+            color: var(--text-primary);
+            background: var(--bg-card-hover);
+        }
+
+        /* ── AI Partners ── */
+        .ai-partners-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .ai-partner-chip {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+            transition: all var(--transition-smooth);
+            cursor: default;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .ai-partner-chip:hover {
+            border-color: var(--accent);
+            box-shadow: 0 3px 14px var(--accent-glow);
+            transform: translateY(-2px);
+            background: var(--bg-card-hover);
+        }
+        .ai-partner-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: var(--radius-full);
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* ── Education ── */
+        .edu-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 28px 32px;
+            transition: all var(--transition-smooth);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .edu-card:hover {
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
+        }
+        .edu-info h4 {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+        .edu-info p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        .edu-badge {
+            background: var(--accent-soft);
+            border: 1px solid rgba(200, 164, 92, 0.3);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-tertiary);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+        }
+        .footer .divider-dot {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: var(--radius-full);
+            background: var(--accent);
+            margin: 0 8px;
+            vertical-align: middle;
+            opacity: 0.6;
+        }
+
+        /* ── Scroll-reveal ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.08s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.16s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.24s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.32s;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding-top: 80px;
+                padding-bottom: 30px;
+            }
+            .hero-name {
+                font-size: 2.2rem;
+            }
+            .hero-tagline {
+                font-size: 0.95rem;
+            }
+            .section {
+                padding: 44px 0;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .narrative-card {
+                padding: 24px 20px;
+            }
+            .timeline {
+                padding-left: 20px;
+            }
+            .timeline::before {
+                left: 4px;
+            }
+            .timeline-item {
+                padding-left: 22px;
+                margin-bottom: 28px;
+            }
+            .timeline-dot {
+                left: -19px;
+                width: 9px;
+                height: 9px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .lang-switch-wrap {
+                top: 16px;
+                right: 14px;
+            }
+            .lang-switch-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.72rem;
+            }
+            .edu-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .container {
+                padding: 0 18px;
+            }
+            .hero-image-wrapper {
+                width: 220px;
+                margin: 0 auto;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-name {
+                font-size: 1.8rem;
+            }
+            .narrative-highlights {
+                grid-template-columns: 1fr;
+            }
+            .products-row {
+                gap: 8px;
+            }
+            .product-chip {
+                padding: 8px 16px;
+                font-size: 0.78rem;
+            }
+            .hero-image-wrapper {
+                width: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════ LANGUAGE SWITCH ═══════════════ -->
+    <div class="lang-switch-wrap">
+        <button class="lang-switch-btn" id="langSwitchBtn" aria-label="Switch language">
+            <span class="lang-switch-label" id="langSwitchLabel">中</span>
+            <span class="lang-indicator-dot"></span>
+        </button>
+    </div>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero section" id="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <!-- 照片区域 -->
+                <div class="hero-image-wrapper reveal">
+                    <!-- 请替换下方 src 为您的照片链接 -->
+                    <img src="https://github.com/kaydong233-ux/picx-images-hosting/raw/master/WechatIMG39540.3k8mjy5nrj.webp" alt="Kay Dong portrait" loading="eager">
+                </div>
+                <!-- 文字内容区域 -->
+                <div class="hero-text-content">
+                    <div class="hero-badge reveal">
+                        <span class="hero-badge-dot"></span>
+                        <span data-lang-en>Available for Remote Opportunities</span>
+                        <span data-lang-zh>开放远程工作机会</span>
+                    </div>
+                    <h1 class="hero-name reveal reveal-delay-1">
+                        <span data-lang-en>Kay <span class="accent">Dong</span></span>
+                        <span data-lang-zh><span class="accent">董</span> Kay</span>
+                    </h1>
+                    <p class="hero-tagline reveal reveal-delay-2" data-lang-en>
+                        Overseas Growth &amp; KOL Marketing Leader — 10+ years building content ecosystems and scaling multi-million DAU platforms across Europe, Africa, and Latin America.
+                    </p>
+                    <p class="hero-tagline reveal reveal-delay-2" data-lang-zh>
+                        海外增长与KOL营销负责人 — 10年+内容生态搭建经验，在欧洲、非洲、拉美市场打造千万级DAU内容平台。
+                    </p>
+                    <div class="hero-meta-row reveal reveal-delay-3">
+                        <span class="hero-meta-tag">📍 Dali, China</span>
+                        <span class="hero-meta-tag">🌍 Europe / Africa / LATAM</span>
+                        <span class="hero-meta-tag">📣 KOL BD</span>
+                        <span class="hero-meta-tag">📱 Content &amp; Growth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════ CORE NARRATIVE ═══════════════ -->
+    <section class="section" id="narrative">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label" data-lang-en>Core Narrative</div>
+                <div class="section-label" data-lang-zh>核心叙事</div>
+                <div class="section-title" data-lang-en>At a Glance</div>
+                <div class="section-title" data-lang-zh>纵览</div>
+            </div>
+            <div class="narrative-card reveal reveal-delay-1">
+                <p data-lang-en>Over 10 years of experience in overseas content ecosystems and growth operations, with a strong focus on emerging markets. Built and scaled <strong>multi-million DAU content platforms</strong> across Europe, Africa, and Latin America — leading 0→1 content ecosystem development, managing global KOL/influencer operations end-to-end, and bridging content, growth, and monetization systems.</p>
+                <p data-lang-zh>拥有超过10年海外内容生态与增长运营经验，深耕新兴市场。曾在欧洲、非洲和拉美地区搭建并规模化<strong>千万级DAU内容平台</strong>，主导0→1内容生态建设，端到端管理全球KOL/达人运营，并打通内容、增长与商业化系统。</p>
+                <div class="narrative-highlights">
+                    <div class="narrative-highlight-item">
+                        <span class="nh-icon">🚀</span>
+                        <span class="nh-text" data-lang-en>0→1 Content Ecosystem across 3 continents</span>
+                        <span class="nh-text" data-lang-zh>跨三大洲0→1内容生态搭建</span>
+                    </div>
+                    <div class="narrative-highlight-item">
+                        <span class="nh-icon">📣</span>
+                        <span class="nh-text" data-lang-en>75% KOL renewal rate, 125% exposure growth</span>
+                        <span class="nh-text" data-lang-zh>KOL续约率75%，曝光增长125%</span>
+                    </div>
+                    <div class="narrative-highlight-item">
+                        <span class="nh-icon">⚙️</span>
+                        <span class="nh-text" data-lang-en>Content moderation efficiency +3×, accuracy +40%</span>
+                        <span class="nh-text" data-lang-zh>审核效率提升3倍，准确率提升40%</span>
+                    </div>
+                    <div class="narrative-highlight-item">
+                        <span class="nh-icon">👥</span>
+                        <span class="nh-text" data-lang-en>Cross-cultural team management (80+)</span>
+                        <span class="nh-text" data-lang-zh>跨文化团队管理（80+人）</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════ PRODUCTS ═══════════════ -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label" data-lang-en>Products Operated</div>
+                <div class="section-label" data-lang-zh>运营产品</div>
+                <div class="section-title" data-lang-en>Platforms I've Shaped</div>
+                <div class="section-title" data-lang-zh>曾深度参与的产品</div>
+            </div>
+            <div class="products-row reveal reveal-delay-1">
+                <span class="product-chip"><span>Snaptube</span></span>
+                <span class="product-chip"><span>Zapee</span></span>
+                <span class="product-chip"><span>Viskit</span></span>
+                <span class="product-chip"><span>Klarna</span></span>
+                <span class="product-chip"><span>Glowry</span></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════ EXPERIENCE TIMELINE ═══════════════ -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label" data-lang-en>Experience</div>
+                <div class="section-label" data-lang-zh>工作经验</div>
+                <div class="section-title" data-lang-en>Career Timeline</div>
+                <div class="section-title" data-lang-zh>职业历程</div>
+            </div>
+            <div class="timeline">
+
+                <!-- 2024–Now -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-period">2024 – Now</div>
+                    <div class="timeline-role" data-lang-en>KOL &amp; Commercialization Focus</div>
+                    <div class="timeline-role" data-lang-zh>KOL &amp; 商业化负责人 / 创业者</div>
+                    <div class="timeline-company" data-lang-en>Independent / Entrepreneurial</div>
+                    <div class="timeline-company" data-lang-zh>自主创业</div>
+                    <div class="timeline-desc">
+                        <span data-lang-en>
+                            <ul>
+                                <li>End-to-end overseas KOL operations (TikTok / IG / YouTube)</li>
+                                <li>Built KOL database from 0→1 with tagging &amp; tiering system</li>
+                                <li>Full-cycle campaign management: Brief → Match → Negotiate → Execute → Review</li>
+                                <li>Achieved 125% exposure growth and 75% KOL renewal rate</li>
+                            </ul>
+                        </span>
+                        <span data-lang-zh>
+                            <ul>
+                                <li>海外KOL全流程运营（TikTok / IG / YouTube）</li>
+                                <li>从0→1搭建达人数据库（标签化管理）</li>
+                                <li>Campaign全链路：Brief → 匹配 → 谈判 → 执行 → 复盘</li>
+                                <li>曝光增长125%，续约率75%</li>
+                            </ul>
+                        </span>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">KOL BD</span>
+                            <span class="timeline-tag">Campaign ROI</span>
+                            <span class="timeline-tag">TikTok</span>
+                            <span class="timeline-tag">Instagram</span>
+                            <span class="timeline-tag">YouTube</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2022–2023 Klarna -->
+                <div class="timeline-item reveal reveal-delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-period">2022 – 2023</div>
+                    <div class="timeline-role" data-lang-en>Content &amp; E-commerce Integration</div>
+                    <div class="timeline-role" data-lang-zh>内容电商整合运营</div>
+                    <div class="timeline-company">Klarna</div>
+                    <div class="timeline-desc">
+                        <span data-lang-en>
+                            <ul>
+                                <li>Built end-to-end content-to-commerce pipeline: Content Library → Moderation → Tagging → Recommendation → Conversion</li>
+                                <li>Cold-started Discord community; established user-feedback→product-optimization loop</li>
+                                <li>Supported Black Friday &amp; Christmas campaign planning and execution</li>
+                                <li>Improved add-to-cart and purchase conversion rates</li>
+                            </ul>
+                        </span>
+                        <span data-lang-zh>
+                            <ul>
+                                <li>搭建电商内容流完整链路：内容库 → 审核 → 标签 → 推荐 → 转化</li>
+                                <li>Discord社群冷启动与用户反馈产品优化闭环</li>
+                                <li>支持Black Friday / Christmas大促策划到落地</li>
+                                <li>提升转化率（加购 / 购买）</li>
+                            </ul>
+                        </span>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">内容电商</span>
+                            <span class="timeline-tag">推荐链路</span>
+                            <span class="timeline-tag">Discord社区</span>
+                            <span class="timeline-tag">大促运营</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2020–2022 Transsion -->
+                <div class="timeline-item reveal reveal-delay-2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-period">2020 – 2022</div>
+                    <div class="timeline-role" data-lang-en>Content &amp; Growth System</div>
+                    <div class="timeline-role" data-lang-zh>内容与增长体系负责人</div>
+                    <div class="timeline-company">Transsion</div>
+                    <div class="timeline-desc">
+                        <span data-lang-en>
+                            <ul>
+                                <li>Led content product operations for African markets; rebuilt &amp; expanded content library (10M+ scale)</li>
+                                <li>Established moderation rules &amp; workflows (3× efficiency gain, 40% accuracy improvement)</li>
+                                <li>Collaborated with Algorithm / AI teams to optimize content moderation &amp; distribution</li>
+                                <li>Designed creator onboarding &amp; growth mechanism (screening / tiering / incentives)</li>
+                                <li>Explored content monetization via in-app activities &amp; off-platform campaigns</li>
+                            </ul>
+                        </span>
+                        <span data-lang-zh>
+                            <ul>
+                                <li>负责非洲市场内容产品整体运营，完成内容库重构与扩充（千万级规模）</li>
+                                <li>搭建内容审核规则与流程，优化审核及打标体系（效率提升3倍，准确率提升40%）</li>
+                                <li>与算法/AI团队协作，优化内容审核与分发策略</li>
+                                <li>搭建创作者引入与成长机制（筛选/入驻/分级/激励）</li>
+                                <li>参与内容商业化探索（端内活动及站外投放协同）</li>
+                            </ul>
+                        </span>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">内容审核</span>
+                            <span class="timeline-tag">新兴市场</span>
+                            <span class="timeline-tag">创作者生态</span>
+                            <span class="timeline-tag">商业化</span>
+                            <span class="timeline-tag">AI协作</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2018–2020 Mobiuspace -->
+                <div class="timeline-item reveal reveal-delay-3">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-period">2018 – 2020</div>
+                    <div class="timeline-role" data-lang-en>Content System &amp; Category Operations</div>
+                    <div class="timeline-role" data-lang-zh>内容体系与品类运营</div>
+                    <div class="timeline-company">Mobiuspace</div>
+                    <div class="timeline-desc">
+                        <span data-lang-en>
+                            <ul>
+                                <li>Managed category operations (Music, Dance, Gaming, Lifestyle) for a 10M+ DAU product</li>
+                                <li>Built content classification, tagging &amp; testing mechanisms; improved content richness &amp; distribution efficiency</li>
+                                <li>Optimized content structure &amp; supply strategy; increased user content consumption time by 50%+</li>
+                                <li>Set content intake &amp; screening standards to ensure quality &amp; stability</li>
+                            </ul>
+                        </span>
+                        <span data-lang-zh>
+                            <ul>
+                                <li>负责千万DAU产品内容品类运营（音乐、舞蹈、游戏、情感等）</li>
+                                <li>搭建内容分类、标签及测试机制，提升内容库丰富度与分发效率</li>
+                                <li>优化内容结构与供给策略，提升用户内容消费时长（50%+）</li>
+                                <li>制定内容入库与筛选标准，提升整体内容质量与稳定性</li>
+                            </ul>
+                        </span>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">内容体系</span>
+                            <span class="timeline-tag">内容结构化</span>
+                            <span class="timeline-tag">数据驱动</span>
+                            <span class="timeline-tag">品类运营</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2012–2018 Huawei -->
+                <div class="timeline-item reveal reveal-delay-4">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-period">2012 – 2018</div>
+                    <div class="timeline-role" data-lang-en>Content System Builder</div>
+                    <div class="timeline-role" data-lang-zh>内容体系搭建者</div>
+                    <div class="timeline-company">Huawei</div>
+                    <div class="timeline-desc">
+                        <span data-lang-en>
+                            <ul>
+                                <li>Built content columns from 0→1 for 3M / Xinsheng Community (achieved #1 traffic)</li>
+                                <li>Designed PUGC production &amp; incentive mechanisms</li>
+                                <li>Established annual content activity framework</li>
+                                <li>Improved core metrics: submissions, page views, and engagement</li>
+                            </ul>
+                        </span>
+                        <span data-lang-zh>
+                            <ul>
+                                <li>3M/心声社区，0→1搭建内容栏目（Top1流量）</li>
+                                <li>搭建PUGC生产与激励机制</li>
+                                <li>建立内容活动体系（年度运营框架）</li>
+                                <li>提升内容社区核心指标（投稿/浏览/互动）</li>
+                            </ul>
+                        </span>
+                        <div class="timeline-tags">
+                            <span class="timeline-tag">PUGC</span>
+                            <span class="timeline-tag">内容机制</span>
+                            <span class="timeline-tag">社区运营</span>
+                            <span class="timeline-tag">0→1</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════ CORE SKILLS ═══════════════ -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label" data-lang-en>Core Skills</div>
+                <div class="section-label" data-lang-zh>核心技能</div>
+                <div class="section-title" data-lang-en>What I Bring to the Table</div>
+                <div class="section-title" data-lang-zh>我的能力版图</div>
+            </div>
+            <div class="skills-grid">
+
+                <!-- Growth & Market -->
+                <div class="skill-card reveal">
+                    <span class="skill-card-icon">🌍</span>
+                    <div class="skill-card-title" data-lang-en>Growth &amp; Market</div>
+                    <div class="skill-card-title" data-lang-zh>增长与市场</div>
+                    <div class="skill-card-subtitle" data-lang-en>Emerging Markets · User Growth · Localization</div>
+                    <div class="skill-card-subtitle" data-lang-zh>新兴市场 · 用户增长 · 本地化</div>
+                    <div class="skill-tags-row">
+                        <span class="skill-tag">Europe</span><span class="skill-tag">Africa</span><span class="skill-tag">LATAM</span>
+                        <span class="skill-tag">User Growth</span><span class="skill-tag">Localization</span><span class="skill-tag">Community</span>
+                    </div>
+                </div>
+
+                <!-- Content & Ecosystem -->
+                <div class="skill-card reveal reveal-delay-1">
+                    <span class="skill-card-icon">🎥</span>
+                    <div class="skill-card-title" data-lang-en>Content &amp; Ecosystem</div>
+                    <div class="skill-card-title" data-lang-zh>内容与生态</div>
+                    <div class="skill-card-subtitle" data-lang-en>0→1 System · PUGC/UGC · Moderation</div>
+                    <div class="skill-card-subtitle" data-lang-zh>0→1体系 · PUGC/UGC · 审核打标</div>
+                    <div class="skill-tags-row">
+                        <span class="skill-tag">Content System</span><span class="skill-tag">PUGC</span><span class="skill-tag">UGC</span>
+                        <span class="skill-tag">Moderation</span><span class="skill-tag">Tagging</span>
+                    </div>
+                </div>
+
+                <!-- Influencer & Social -->
+                <div class="skill-card reveal reveal-delay-2">
+                    <span class="skill-card-icon">📣</span>
+                    <div class="skill-card-title" data-lang-en>Influencer &amp; Social</div>
+                    <div class="skill-card-title" data-lang-zh>达人与社交媒体</div>
+                    <div class="skill-card-subtitle" data-lang-en>KOL BD · Campaigns · TikTok/IG/YT</div>
+                    <div class="skill-card-subtitle" data-lang-zh>KOL BD · Campaign管理 · 社媒策略</div>
+                    <div class="skill-tags-row">
+                        <span class="skill-tag">KOL BD</span><span class="skill-tag">Campaign</span>
+                        <span class="skill-tag">TikTok</span><span class="skill-tag">Instagram</span><span class="skill-tag">YouTube</span>
+                    </div>
+                </div>
+
+                <!-- Monetization & Performance -->
+                <div class="skill-card reveal reveal-delay-3">
+                    <span class="skill-card-icon">💰</span>
+                    <div class="skill-card-title" data-lang-en>Monetization &amp; Performance</div>
+                    <div class="skill-card-title" data-lang-zh>商业化与效果</div>
+                    <div class="skill-card-subtitle" data-lang-en>Content E-commerce · ROI · Funnel Design</div>
+                    <div class="skill-card-subtitle" data-lang-zh>内容电商 · ROI优化 · 转化漏斗</div>
+                    <div class="skill-tags-row">
+                        <span class="skill-tag">E-commerce</span><span class="skill-tag">ROI</span>
+                        <span class="skill-tag">Funnel</span><span class="skill-tag">Meta Ads</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Execution -->
+                <div class="skill-card reveal reveal-delay-4">
+                    <span class="skill-card-icon">⚙️</span>
+                    <div class="skill-card-title" data-lang-en>Tools &amp; Execution</div>
+                    <div class="skill-card-title" data-lang-zh>工具与执行</div>
+                    <div class="skill-card-subtitle" data-lang-en>GEO/ASO · Data Analysis · Team Mgmt (80+)</div>
+                    <div class="skill-card-subtitle" data-lang-zh>GEO/ASO · 数据分析 · 跨文化管理(80+)</div>
+                    <div class="skill-tags-row">
+                        <span class="skill-tag">GEO/ASO</span><span class="skill-tag">Data</span>
+                        <span class="skill-tag">Google Workspace</span><span class="skill-tag">Meta Ads</span>
+                    </div>
+                </div>
+
+                <!-- Certifications & Languages -->
+                <div class="skill-card reveal reveal-delay-4">
+                    <span class="skill-card-icon">🎓</span>
+                    <div class="skill-card-title" data-lang-en>Certifications &amp; Languages</div>
+                    <div class="skill-card-title" data-lang-zh>认证与语言</div>
+                    <div class="skill-card-subtitle" data-lang-en>CET-6 · IELTS 6.0 · ICF Coaching (M2)</div>
+                    <div class="skill-card-subtitle" data-lang-zh>CET-6 · IELTS 6.0 · ICF教练(M2)</div>
+                    <div class="skill-tags-row">
+                        <span class="skill-tag">CET-6</span><span class="skill-tag">IELTS 6.0</span>
+                        <span class="skill-tag">ICF M2</span><span class="skill-tag">Psychology Counselor</span>
+                        <span class="skill-tag">Mandarin 2-A</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════ AI PARTNERS ═══════════════ -->
+    <section class="section" id="ai-partners">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label" data-lang-en>AI Toolkit</div>
+                <div class="section-label" data-lang-zh>AI伙伴</div>
+                <div class="section-title" data-lang-en>AI Partners I Work With</div>
+                <div class="section-title" data-lang-zh>日常使用的AI工具</div>
+            </div>
+            <div class="ai-partners-row reveal reveal-delay-1">
+                <span class="ai-partner-chip"><span class="ai-partner-dot"></span>ChatGPT</span>
+                <span class="ai-partner-chip"><span class="ai-partner-dot"></span>KIMI</span>
+                <span class="ai-partner-chip"><span class="ai-partner-dot"></span>Claude</span>
+                <span class="ai-partner-chip"><span class="ai-partner-dot"></span>Google Gemini</span>
+                <span class="ai-partner-chip"><span class="ai-partner-dot"></span>Open Claw</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════ EDUCATION ═══════════════ -->
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label" data-lang-en>Education</div>
+                <div class="section-label" data-lang-zh>教育经历</div>
+                <div class="section-title" data-lang-en>Academic Background</div>
+                <div class="section-title" data-lang-zh>学术背景</div>
+            </div>
+            <div class="edu-card reveal reveal-delay-1">
+                <div class="edu-info">
+                    <h4 data-lang-en>Changchun Normal University</h4>
+                    <h4 data-lang-zh>长春师范大学</h4>
+                    <p data-lang-en>Bachelor's Degree in Tourism Management<br>(2+2 International Program, fully English-taught)</p>
+                    <p data-lang-zh>旅游管理学士学位<br>（2+2国际项目，全英文授课）</p>
+                </div>
+                <div class="edu-badge" data-lang-en>2+2 English-Taught</div>
+                <div class="edu-badge" data-lang-zh>2+2 全英文授课</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <span>Kay Dong</span>
+            <span class="divider-dot"></span>
+            <span data-lang-en>Dali, China</span>
+            <span data-lang-zh>中国·大理</span>
+            <span class="divider-dot"></span>
+            <span data-lang-en>Overseas Growth &amp; KOL Marketing</span>
+            <span data-lang-zh>海外增长 &amp; KOL营销</span>
+            <span class="divider-dot"></span>
+            <span>© 2026</span>
+        </div>
+    </footer>
+
+    <!-- ═══════════════ SCRIPTS ═══════════════ -->
+    <script>
+        (function() {
+            // ── Language Switch ──
+            const html = document.documentElement;
+            const langSwitchBtn = document.getElementById('langSwitchBtn');
+            const langSwitchLabel = document.getElementById('langSwitchLabel');
+            let currentLang = 'en'; // default English
+
+            function updateLangUI() {
+                if (currentLang === 'en') {
+                    langSwitchLabel.textContent = '中';
+                    html.setAttribute('data-lang', 'en');
+                    html.setAttribute('lang', 'en');
+                } else {
+                    langSwitchLabel.textContent = 'EN';
+                    html.setAttribute('data-lang', 'zh');
+                    html.setAttribute('lang', 'zh');
+                }
+                langSwitchLabel.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    langSwitchLabel.style.transform = 'scale(1)';
+                }, 180);
+            }
+
+            langSwitchBtn.addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'zh' : 'en';
+                updateLangUI();
+                try {
+                    localStorage.setItem('kaydong-lang', currentLang);
+                } catch (e) {}
+            });
+
+            try {
+                const saved = localStorage.getItem('kaydong-lang');
+                if (saved === 'zh' || saved === 'en') {
+                    currentLang = saved;
+                }
+            } catch (e) {}
+            updateLangUI();
+
+            // ── Scroll Reveal ──
+            const revealEls = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.08,
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealEls.forEach(el => revealObserver.observe(el));
+
+            // ── Smooth scroll ──
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            console.log('%c Kay Dong | Personal Site %c Ready ',
+                'color: #c8a45c; font-weight: bold; font-size: 1.1rem;',
+                'color: #9ca0ab;');
+        })();
+    </script>
+</body>
+</html>
